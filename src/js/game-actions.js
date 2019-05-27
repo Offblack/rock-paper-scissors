@@ -30,7 +30,7 @@ const startGame = () => {
          gameStructure.gameSummary.draws++;
       } else if (gameStructure.oneGame.aiHand === "rock" && gameStructure.oneGame.playerHand === "paper") {
          gameResult = 'Win!';
-         gameSummary.wins++;
+         gameStructure.gameSummary.wins++;
       } else if (gameStructure.oneGame.aiHand === "paper" && gameStructure.oneGame.playerHand === "scissors") {
          gameResult = 'Win!';
          gameStructure.gameSummary.wins++;
@@ -43,7 +43,7 @@ const startGame = () => {
       }
       gameStructure.gameSummary.numbers++;
       DOM.gameShowResult.innerHTML = gameResult;
-      countGames()
+      gameStructure.countGames()
    }
 }
 
