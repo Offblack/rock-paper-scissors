@@ -60,3 +60,31 @@ body {
 .active {
    border: 5px #302e2f solid !important;
 }
+
+#game-table {
+   display: flex;
+   margin: 55px 0;
+}
+
+#game-show-result {
+   text-align: center;
+   flex: 0 0 50%;
+   font-size: 46px;
+   font-weight: 700;
+   justify-content: center;
+}
+
+#points-counter {
+   margin: 0;
+   flex: 0 0 25%;
+   list-style-type: none;
+   justify-content: flex-end;
+   font-size: 18px;
+}
+
+#ai-move {
+   flex: 0 0 25%;
+   list-style-type: none;
+   justify-content: flex-start;
+   font-size: 26px;
+}
