@@ -11,13 +11,6 @@ const playerMove = function () {
    this.classList.add('active');
 }
 
-const clearMoves = () => {
-   gameStructure.oneGame.playerHand = '';
-   DOM.playerOptions.forEach(oneOption => {
-      oneOption.classList.remove('active');
-   });
-}
-
 const makeMove = DOM.playerOptions.forEach(oneOption => {
    oneOption.addEventListener('click', playerMove)
 });
@@ -28,6 +21,31 @@ const aiMove = () => {
    gameStructure.oneGame.aiHand = randomHand;
    DOM.computerChose.innerHTML = `Computer choose: ${randomHand.toUpperCase().bold()}`;
 }
+
+const clearMoves = () => {
+   gameStructure.oneGame.playerHand = '';
+   DOM.playerOptions.forEach(oneOption => {
+      oneOption.classList.remove('active');
+   });
+}
+
+
+const reloadGame = () => {
+
+   console.log('works!');
+
+   clearMoves();
+
+   gameStructure.gameSummary.numbers = 0;
+   gameStructure.gameSummary.wins = 0;
+   gameStructure.gameSummary.losses = 0;
+   gameStructure.gameSummary.draws = 0;
+
+   gameStructure.countGames()
+}
+
+const reloadTheGame = DOM.reload.addEventListener('click', reloadGame);
+
 
 const startGame = () => {
    if (gameStructure.oneGame.playerHand) {

@@ -43,6 +43,12 @@ body {
    }
 }
 
+#down-section {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 #play-game {
    font-size: 34px;
    background: none;
@@ -50,11 +56,25 @@ body {
    padding: 5px 25px;
    transition: all .2s ease-in-out;
    font-weight: 700;
+   margin-left: 120px;
+
+   &:hover {
+      background: #fff;
+      cursor: pointer;
+   }
 }
 
-#play-game:hover {
-   background: #fff;
-   cursor: pointer;
+#reload {
+   width: 50px;
+   opacity: .85;
+   transition: all .2s ease-in-out;
+   margin-left: 50px;
+
+   &:hover {
+      filter: invert(100%);
+      cursor: pointer;
+      opacity: 1;
+   }
 }
 
 .active {
