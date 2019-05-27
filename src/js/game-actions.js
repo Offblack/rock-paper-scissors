@@ -1,55 +1,50 @@
+import * as gameStructure from './game-structure';
+import * as DOM from './dom';
+
 let gameResult = '';
 
 const playerMove = function () {
-   oneGame.playerHand = this.dataset.option;
-   playerOptions.forEach(oneOption => {
+   gameStructure.oneGame.playerHand = this.dataset.option;
+   DOM.playerOptions.forEach(oneOption => {
       oneOption.classList.remove('active');
    });
    this.classList.add('active');
-   console.log(oneGame.playerHand);
 }
 
-const makeMove = playerOptions.forEach(oneOption => {
+const makeMove = DOM.playerOptions.forEach(oneOption => {
    oneOption.addEventListener('click', playerMove)
 });
 
 const aiMove = () => {
    const randomHands = ['rock', 'paper', "scissors"];
    const randomHand = randomHands[Math.floor(Math.random() * 3)];
-   oneGame.aiHand = randomHand;
-   computerChose.innerHTML = `Computer choose: ${randomHand.toUpperCase().bold()}`;
-}
-
-const countGames = () => {
-   pointsCounter.innerHTML = `<li>Games: ${gameSummary.numbers}</li>
-   <li>Wins: ${gameSummary.wins}</li>
-   <li>Losses: ${gameSummary.losses}</li>
-   <li>Draws: ${gameSummary.draws}</li>`
+   gameStructure.oneGame.aiHand = randomHand;
+   DOM.computerChose.innerHTML = `Computer choose: ${randomHand.toUpperCase().bold()}`;
 }
 
 const startGame = () => {
-   if (oneGame.playerHand) {
+   if (gameStructure.oneGame.playerHand) {
       aiMove();
-      if (oneGame.aiHand === oneGame.playerHand) {
+      if (gameStructure.oneGame.aiHand === gameStructure.oneGame.playerHand) {
          gameResult = 'Draw!';
-         gameSummary.draws++;
-      } else if (oneGame.aiHand === "rock" && oneGame.playerHand === "paper") {
+         gameStructure.gameSummary.draws++;
+      } else if (gameStructure.oneGame.aiHand === "rock" && gameStructure.oneGame.playerHand === "paper") {
          gameResult = 'Win!';
          gameSummary.wins++;
-      } else if (oneGame.aiHand === "paper" && oneGame.playerHand === "scissors") {
+      } else if (gameStructure.oneGame.aiHand === "paper" && gameStructure.oneGame.playerHand === "scissors") {
          gameResult = 'Win!';
-         gameSummary.wins++;
-      } else if (oneGame.aiHand === "scissors" && oneGame.playerHand === "rock") {
+         gameStructure.gameSummary.wins++;
+      } else if (gameStructure.oneGame.aiHand === "scissors" && gameStructure.oneGame.playerHand === "rock") {
          gameResult = 'Win!';
-         gameSummary.wins++;
+         gameStructure.gameSummary.wins++;
       } else {
          gameResult = 'Lose!';
-         gameSummary.losses++;
+         gameStructure.gameSummary.losses++;
       }
-      gameSummary.numbers++;
-      gameShowResult.innerHTML = gameResult;
+      gameStructure.gameSummary.numbers++;
+      DOM.gameShowResult.innerHTML = gameResult;
       countGames()
    }
 }
 
-const playGame = play.addEventListener('click', startGame);
+const playGame = DOM.play.addEventListener('click', startGame);
