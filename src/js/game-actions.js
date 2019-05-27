@@ -11,6 +11,13 @@ const playerMove = function () {
    this.classList.add('active');
 }
 
+const clearMoves = () => {
+   gameStructure.oneGame.playerHand = '';
+   DOM.playerOptions.forEach(oneOption => {
+      oneOption.classList.remove('active');
+   });
+}
+
 const makeMove = DOM.playerOptions.forEach(oneOption => {
    oneOption.addEventListener('click', playerMove)
 });
@@ -44,6 +51,7 @@ const startGame = () => {
       gameStructure.gameSummary.numbers++;
       DOM.gameShowResult.innerHTML = gameResult;
       gameStructure.countGames()
+      clearMoves();
    }
 }
 
