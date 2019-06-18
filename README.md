@@ -2,6 +2,8 @@
 
 Simple game - rock, paper & scissors!
 
+LIVE: https://offblack.github.io/rock-paper-scissors
+
 ![alt text](https://raw.githubusercontent.com/Offblack/rock-paper-scissors/master/screenshot.png)
 
 ## What's inside?

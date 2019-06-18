@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <meta name="description" content="Simple game - rock, paper & scissors!" />
+
+   <title>Rock, Paper, Scissors</title>
+<link href="css/style.css" rel="stylesheet"></head>
+
+<body>
+   <div id="game">
+      <header>
+         <div id="game-title">
+            <h1>Rock, Paper & Scissors</h1>
+         </div>
+      </header>
+      <section>
+         <div id="player-options">
+            <h2>Choose your move:</h2>
+            <img data-option="rock" src="img/rock.png" alt="rock">
+            <img data-option="scissors" src="img/scissors.png" alt="scissors">
+            <img data-option="paper" src="img/paper.png" alt="paper">
+         </div>
+         <div id="down-section">
+            <button id="play-game">Play!</button>
+            <img src="img/reload.png" alt=reload id="reload">
+         </div>
+         <div id="game-table">
+            <div id="ai-move">Computer choose:</div>
+            <div id="game-show-result"></div>
+            <ul id="points-counter">
+               <li>Games: 0</li>
+               <li>Wins: 0</li>
+               <li>Losses: 0</li>
+               <li>Draws: 0</li>
+            </ul>
+         </div>
+      </section>
+      <script src="index.js"></script>
+   </div>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
