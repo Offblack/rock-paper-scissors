@@ -9,6 +9,8 @@ const playerMove = function () {
       oneOption.classList.remove('active');
    });
    this.classList.add('active');
+   DOM.computerChose.innerHTML = 'Computer choose:';
+   DOM.gameShowResult.innerHTML = '';
 }
 
 const makeMove = DOM.playerOptions.forEach(oneOption => {
