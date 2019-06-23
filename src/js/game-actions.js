@@ -42,6 +42,8 @@ const reloadGame = () => {
    gameStructure.gameSummary.draws = 0;
 
    gameStructure.countGames()
+   DOM.computerChose.innerHTML = 'Computer choose:';
+   DOM.gameShowResult.innerHTML = '';
 }
 
 const reloadTheGame = DOM.reload.addEventListener('click', reloadGame);
